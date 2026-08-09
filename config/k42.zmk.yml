@@ -1,0 +1,13 @@
+file_format: "1"
+id: k42
+name: k42
+type: shield
+url: https://github.com/dylandibeneditto/k42/
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - k42
+  - k42

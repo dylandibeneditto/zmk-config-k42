@@ -1,0 +1,22 @@
+if SHIELD_K42_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "K42"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_K42_LEFT || SHIELD_K42_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+endif
