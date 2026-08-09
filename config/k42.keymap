@@ -5,21 +5,21 @@
 
 / {
     behaviors {
-        comsemi: comma_semicolon {
+        cmsm: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dotcol: dot_colon {
+        dtcl: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        marks: question_exclamation {
+        mark: question_exclamation {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp QMARK>, <&kp EXCL>;
@@ -30,47 +30,47 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        display-name = "NORM";
+                        display-name = "DEF";
 //-----------------------------------------------------------------------------------
-// |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |  ' "  |
-// |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   P   |
-// |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |  , ;  |  . :  |  ? !  |
-//                 |  TAB  | SHIFT |  NAV  |  NUM  | SPACE |  DEL  |
+// |  TAB  |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |  ' "  |  - _  |
+// |  ESC  |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   P   |  RET  |
+// |  ALT  |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |  , ;  |  . :  |  / ?  |  = +  |
+//                         |  CTR  | SHIFT |  NUM  |  NAV  | SPACE |  BSP  |
 
                         bindings = <
-   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I &kp O   &kp SQT
-   &kp A &kp S &kp D &kp F  &kp G   &kp H &kp J   &kp K &kp L &kp P
-   &kp Z &kp X &kp C   &kp V          &kp B   &kp N &kp M     &comsemi &dotcol &marks
-               &kp TAB &kp LSHIFT &mo 2 &mo 1 &kp SPACE &kp BSPC
+   &kp TAB  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I &kp O &kp SQT   &kp MINUS
+   &kp ESC  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J &kp K &kp L &kp P     &kp RET
+   &kp LALT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M &cmsm &dtcl &kp SLASH &kp EQUAL
+               &kp LCTRL &kp LSHIFT &mo 1   &mo 2 &kp SPACE &kp BSPC
                         >;
                 };
                 lower_layer {
                         display-name = "NUM";
 //-----------------------------------------------------------------------------------
-// |   [   |   {   |   (   |  - _  |  = +  |   *   |   /   |   )   |   }   |   ]   |
-// |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |
-// |  ` ~  |   @   |   #   |   $   |   %   |   ^   |   &   |   <   |   >   |  \ |  |
-//                 |  TAB  | SHIFT |  NAV  |[HELD] | SPACE | BOOTL |
+// |  TAB  |   !   |   @   |   #   |   $   |   %   |   ^   |   &   |   *   |   (   |   )   |       |
+// |  ESC  |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |  RET  |
+// |  ALT  |  ` ~  |   {   |   [   |   <   |       |       |   >   |   ]   |   }   |  \ |  |       |
+//                         |  CTR  | SHIFT |  [h]  |  NAV  | SPACE |  BSP  |
                         bindings = <
-   &kp LBKT &kp LBRC &kp LPAR &kp MINUS   &kp EQUAL &kp STAR &kp FSLH  &kp RPAR &kp RBRC &kp RBKT
-   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5   &kp N6 &kp N7    &kp N8  &kp N9    &kp N0
-   &kp GRAVE    &kp AT   &kp HASH   &kp DOLLAR     &kp PERCENT   &kp CARET &kp AMPS    &kp LT  &kp GT    &kp BSLH
-                      &kp TAB  &kp LSHIFT  &mo 2    &mo 1  &kp SPACE &bootloader
+   &kp TAB  &kp EXCL  &kp AT   &kp HASH &kp DOLLAR &kp PERCENT   &kp CARET &kp AMPERSAND &kp STAR &kp LPAR &kp RPAR &trans
+   &kp ESC  &kp N1    &kp N2   &kp N3   &kp N4     &kp N5        &kp N6    &kp N7        &kp N8   &kp N9   &kp N0   &kp RET
+   &kp LALT &kp TILDE &kp LBRC &kp LBKT &kp LT     &trans        &trans    &kp GT        &kp RBKT &kp RBRC &kp BSLH &trans
+                                    &kp LCTRL &kp LSHIFT &mo 1   &mo 2 &kp SPACE &kp BSPC
                         >;
                 };
 
                 raise_layer {
                         display-name = "NAV";
 //-----------------------------------------------------------------------------------
-// | BDEV0 | BDEV1 | BDEV2 | BDEV3 | BDEV4 | MACEL | MDECL | PLAY  | VDOWN |  VUP  |
-// | MLEFT | MDOWN | MUP   | MRGHT | MCLCK | ALEFT | ADOWN | AUP   | ARGHT |       |
-// | SLEFT | SDOWN | SUP   | SRGHT | SHIFT |       |       |       | BDOWN |  BUP  |
-//                 | BOOTL | SHIFT |[HELD] |       | SPACE |  DEL  |
+// |  TAB  | BDEV0 | BDEV1 | BDEV2 | BDEV3 | BDEV4 | MACEL | MDECL | PLAY  | VDOWN |  VUP  |       |
+// |  ESC  |       |       |       |       |       | ALEFT | ADOWN | AUP   | ARGHT |       |  RET  |
+// |  ALT  |       |       |       |       |       |       |       |       | BDOWN |  BUP  |       |
+//                         |  CTR  | SHIFT |  NUM  |  [h]  | SPACE | BTLDR |
                         bindings = <
-   &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &kp LSHIFT &trans &trans &kp C_PLAY_PAUSE &kp C_VOLUME_DOWN &kp C_VOLUME_UP
-   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp MB1 &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &trans
-    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &trans &trans &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC
-                                 &bootloader &kp LSHIFT &mo 2    &mo 1  &kp SPACE &kp BSPC
+   &kp TAB  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR       &kp C_PLAY_PAUSE &kp C_VOLUME_DOWN    &kp C_VOLUME_UP      &trans &trans &trans
+   &kp ESC  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW         &kp RIGHT_ARROW      &trans &kp RET
+   &kp LALT &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11          &kp F12          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &trans &trans
+                                                                &kp LCTRL &kp LSHIFT &mo 1    &mo 2 &kp SPACE  &bootloader
                         >;
                 };
         };
