@@ -7,9 +7,9 @@
 #
 #
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: k42_left
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: k42_right
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
