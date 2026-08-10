@@ -19,19 +19,13 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mark: question_exclamation {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp QMARK>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            /* display-name = "DEF"; */
+            display-name = "DEF";
 //-----------------------------------------------------------------------------------
 // |  TAB  |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |  ' "  |  - _  |
 // |  ESC  |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   P   |  RET  |
@@ -47,7 +41,7 @@
         };
 
         lower_layer {
-            /* display-name = "NUM"; */
+            display-name = "NUM";
 //-----------------------------------------------------------------------------------
 // |  TAB  |   !   |   @   |   #   |   $   |   %   |   ^   |   &   |   *   |   (   |   )   |       |
 // |  ESC  |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |  RET  |
@@ -62,7 +56,7 @@
         };
 
         raise_layer {
-            /* display-name = "NAV"; */
+            display-name = "NAV";
 //-----------------------------------------------------------------------------------
 // |  TAB  | BDEV0 | BDEV1 | BDEV2 | BDEV3 | BDEV4 | MACEL | MDECL | PLAY  | VDOWN |  VUP  |       |
 // |  ESC  |       |       |       |       |       | ALEFT | ADOWN | AUP   | ARGHT |       |  RET  |
