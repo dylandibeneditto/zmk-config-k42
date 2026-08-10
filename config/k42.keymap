@@ -31,7 +31,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "DEF";
+            /* display-name = "DEF"; */
 //-----------------------------------------------------------------------------------
 // |  TAB  |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |  ' "  |  - _  |
 // |  ESC  |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   P   |  RET  |
@@ -44,10 +44,10 @@
    &kp LALT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M &cmsm &dtcl &kp SLASH &kp EQUAL
                &kp LCTRL &kp LSHIFT &mo 1   &mo 2 &kp SPACE &kp BSPC
                         >;
-            };
+        };
 
         lower_layer {
-            display-name = "NUM";
+            /* display-name = "NUM"; */
 //-----------------------------------------------------------------------------------
 // |  TAB  |   !   |   @   |   #   |   $   |   %   |   ^   |   &   |   *   |   (   |   )   |       |
 // |  ESC  |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |  RET  |
@@ -59,10 +59,10 @@
    &kp LALT &kp TILDE &kp LBRC &kp LBKT &kp LT     &trans        &trans    &kp GT        &kp RBKT &kp RBRC &kp BSLH &trans
                                     &kp LCTRL &kp LSHIFT &mo 1   &mo 2 &kp SPACE &kp BSPC
                         >;
-            };
+        };
 
         raise_layer {
-            display-name = "NAV";
+            /* display-name = "NAV"; */
 //-----------------------------------------------------------------------------------
 // |  TAB  | BDEV0 | BDEV1 | BDEV2 | BDEV3 | BDEV4 | MACEL | MDECL | PLAY  | VDOWN |  VUP  |       |
 // |  ESC  |       |       |       |       |       | ALEFT | ADOWN | AUP   | ARGHT |       |  RET  |
@@ -74,7 +74,7 @@
    &kp LALT &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11          &kp F12          &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &trans &trans
                                     &kp LCTRL &kp LSHIFT &mo 1   &mo 2 &kp SPACE  &bootloader
                         >;
-            };
+        };
     };
 };
 
